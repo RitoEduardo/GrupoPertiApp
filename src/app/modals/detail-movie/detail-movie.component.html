@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> {{ name }} </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closedModal()">
+        X
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <img [src]="image?.original">
+    <ion-card-header>
+      <ion-card-subtitle>{{ name }}</ion-card-subtitle>
+      <ion-card-title>{{ language }}</ion-card-title>
+      <ion-label> <a [href]="url">{{url}}</a> </ion-label>
+    </ion-card-header>
+
+    <ion-card-content [innerHTML]="summary">
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-content  [fullscreen]="true">
+
+    <div class="logo-center">
+      <img src="assets/icon/favicon.png">
+    </div>
+    
+
+    <form class="container-form" (submit)="login()">
+
+      <ion-item>
+        <ion-icon name="person-outline" slot="start" color="primary"></ion-icon>
+        <ion-label position="floating" color="primary">NOMBRE DE USUARIO</ion-label>
+        <ion-input [(ngModel)]="userName" name="userName"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-icon name="lock-closed-outline" slot="start" color="primary"></ion-icon>
+        <ion-label position="floating" color="primary">CONTRASEÑA</ion-label>
+        <ion-input [(ngModel)]="password" type="password" name="password"></ion-input>
+      </ion-item>
+      
+      <br>
+
+      <ion-button expand="block" size="small" class="button-login" (click)="login()">Iniciar Sesión</ion-button>
+  
+    </form>
+
+    <a class="link-custome" [routerLink]="['/register']"> Registrate </a> 
+
+</ion-content>

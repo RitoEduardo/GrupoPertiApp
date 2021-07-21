@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login"></ion-back-button>
+    </ion-buttons>
+    <ion-title> Registro </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <h1 class="title-center"> Nuevo Registro </h1>
+
+  <p class="info-register">
+    Favor de llenar los campos solicitados para continuar.
+  </p>
+
+  <form class="register-form"> <!-- (submit)="submitForm()"> -->
+
+    <ion-item>
+      <ion-icon name="key-outline" slot="start" color="primary"></ion-icon>
+      <ion-label position="floating" color="primary">NOMBRE DE USUARIO</ion-label>
+      <ion-input [(ngModel)]="userName" name="user"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="person-outline" slot="start" color="primary"></ion-icon>
+      <ion-label position="floating" color="primary">NOMBRE COMPLETO</ion-label>
+      <ion-input [(ngModel)]="name" name="name"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-icon name="lock-open-outline" slot="start" color="primary"></ion-icon>
+      <!-- <ion-label position="floating" color="primary">CONTRASEÑA</ion-label>
+      <ion-input [(ngModel)]="password" name="password" type="password"></ion-input> -->
+      <ion-label position="stacked">Contraseña</ion-label>
+      <ion-input #passwordEyeRegister [(ngModel)]="password" name="password" [type]="passwordTypeInput" clearOnEdit="false"> </ion-input>
+      <button  item-end  class="btn_eye_icon"  (click)="togglePasswordMode()">
+        <ion-icon  [name]="(passwordTypeInput === 'text') ? 'eye-off':'eye' "></ion-icon>
+      </button>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="calendar-outline" slot="start" color="primary"></ion-icon>
+      <ion-label position="floating" color="primary">Fecha de Registro</ion-label>
+      <ion-datetime [(ngModel)]="dateRegister" name="dateRegister" displayFormat="DD/MM/YYYY" pickerFormat="DD MM YYYY" placeholder="Selecione la fecha" doneText="Ok" cancelText="Cancelar"></ion-datetime>
+    </ion-item>
+
+    <br>
+   
+    <ion-button expand="block" (click)="submitForm()" [disabled]="disableFrom">Enviar</ion-button>
+
+  </form>
+
+</ion-content>
